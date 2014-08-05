@@ -63,6 +63,8 @@
 
       (shutdown
         [this]
+        (log-message "Shutting down Event Manager")
         (reset! running false)
         (.interrupt runner)
-        (.join runner)))))
+        (.join runner)
+        (log-message "Shut down Event Manager")))))
